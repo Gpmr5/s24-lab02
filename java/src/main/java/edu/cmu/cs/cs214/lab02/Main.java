@@ -1,16 +1,16 @@
-package edu.cmu.cs.cs214.lab02.shapes;
+package edu.cmu.cs.cs214.lab02;
 
-public class Rectangle implements Shape {
-    private double height;
-    private double width;
-    
-    public Rectangle(double height, double width){
-        this.height = height;
-        this.width = width;
-    }
+import edu.cmu.cs.cs214.lab02.shapes.*;
 
-    @Override
-    public double getArea() {
-        return height * width;
+public class Main {
+    public static void main(String[] args) {
+        Shape rectangle = new Rectangle(2, 3);
+        Shape circle = new Circle(5);
+
+        Renderer rectangleRenderer = new Renderer(rectangle);
+        Renderer circleRenderer = new Renderer(circle);
+
+        rectangleRenderer.draw();
+        circleRenderer.draw();
     }
 }
